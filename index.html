@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agrinho 2026 - Pensamento Computacional</title>
+  <title>Agrinho 2026 - Projeto Inteligente</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
@@ -16,69 +16,109 @@
     }
 
     body {
-      background: linear-gradient(120deg, #00c6ff, #0072ff);
+      background: #0b1220;
       color: white;
-      line-height: 1.6;
     }
 
     header {
+      background: linear-gradient(120deg, #16a34a, #22c55e);
       text-align: center;
       padding: 80px 20px;
     }
 
     header h1 {
-      font-size: 40px;
+      font-size: 42px;
       font-weight: 800;
     }
 
     header p {
-      margin-top: 10px;
       font-size: 18px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 25px;
-      background: white;
-      color: #0072ff;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
+      margin-top: 10px;
     }
 
     section {
       max-width: 1000px;
       margin: auto;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     .card {
-      background: rgba(255,255,255,0.15);
+      background: #111c33;
       padding: 20px;
-      margin: 15px 0;
+      margin: 20px 0;
       border-radius: 15px;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
     h2 {
-      margin-bottom: 15px;
+      color: #22c55e;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
     }
 
     ul {
       margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #22c55e;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    /* gráfico simples */
+    .bar {
+      height: 20px;
+      border-radius: 10px;
+      margin: 10px 0;
+      background: #1e293b;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      background: #22c55e;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    .simulacao {
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      background: rgba(0,0,0,0.2);
+      background: #020617;
       margin-top: 40px;
     }
 
@@ -92,73 +132,102 @@
 
 <body>
 
-  <!-- HERO -->
-  <header>
-    <h1>🌱 Agrinho 2026</h1>
-    <p>Concurso de Pensamento Computacional</p>
-    <p><b>“Agro forte, futuro sustentável”</b></p>
+<header>
+  <h1>🌱 Agrinho 2026</h1>
+  <p>Projeto de Pensamento Computacional</p>
+  <p><b>“Agricultura inteligente para um futuro sustentável”</b></p>
+</header>
 
-    <a class="btn" href="#sobre">Saiba mais</a>
-  </header>
+<section>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <div class="card">
-      <h2>📘 O que é o concurso?</h2>
-      <p>
-        O Agrinho é um programa educacional que incentiva estudantes a desenvolverem
-        criatividade, pensamento crítico e soluções para problemas reais do campo e da sociedade.
-      </p>
-    </div>
-  </section>
+  <!-- PROBLEMA -->
+  <div class="card">
+    <div class="tag">PROBLEMA</div>
+    <h2>🌾 Desperdício de água na agricultura</h2>
+    <p>
+      A irrigação tradicional usa água sem controle, causando desperdício e aumento de custos.
+    </p>
 
-  <!-- OBJETIVOS -->
-  <section>
-    <div class="card">
-      <h2>🧠 Pensamento Computacional</h2>
-      <ul>
-        <li>Abstração de problemas</li>
-        <li>Resolução lógica</li>
-        <li>Criação de soluções tecnológicas</li>
-        <li>Uso de criatividade e inovação</li>
-      </ul>
-    </div>
-  </section>
+    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae" alt="campo irrigação">
+  </div>
 
-  <!-- TEMA -->
-  <section>
-    <div class="card">
-      <h2>🌍 Tema 2026</h2>
-      <p>
-        “Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente”
-      </p>
-    </div>
-  </section>
+  <!-- SOLUÇÃO -->
+  <div class="card">
+    <div class="tag">SOLUÇÃO</div>
+    <h2>💡 Irrigação Inteligente Automatizada</h2>
+    <p>
+      Um sistema com sensores de umidade que ativa a irrigação apenas quando necessário.
+    </p>
 
-  <!-- PARTICIPAÇÃO -->
-  <section>
-    <div class="card">
-      <h2>👩‍💻 Como participar</h2>
-      <ul>
-        <li>Formar equipe com orientação de um professor</li>
-        <li>Escolher um problema do cotidiano</li>
-        <li>Aplicar pensamento computacional</li>
-        <li>Desenvolver uma solução criativa (projeto, robô, app ou ideia)</li>
-      </ul>
-    </div>
-  </section>
+    <ul>
+      <li>Sensor de umidade do solo</li>
+      <li>Microcontrolador (Arduino/IoT)</li>
+      <li>Ativação automática de água</li>
+      <li>Controle inteligente de recursos</li>
+    </ul>
+  </div>
 
-  <!-- CTA -->
-  <section>
-    <div class="card" style="text-align:center;">
-      <h2>🚀 Pronto para inovar?</h2>
-      <p>Crie seu projeto e transforme o futuro com tecnologia e criatividade.</p>
-    </div>
-  </section>
+  <!-- SIMULAÇÃO -->
+  <div class="card simulacao">
+    <div class="tag">SIMULAÇÃO</div>
+    <h2>🤖 Sistema em funcionamento</h2>
 
-  <footer>
-    <p>Feito para o Concurso Agrinho 2026 💚</p>
-  </footer>
+    <p>Estado do solo:</p>
+    <button onclick="ativar()">Simular solo seco</button>
+    <button onclick="desativar()">Simular solo úmido</button>
+
+    <p class="status" id="status">Aguardando leitura...</p>
+  </div>
+
+  <!-- GRÁFICO -->
+  <div class="card">
+    <div class="tag">RESULTADOS</div>
+    <h2>📊 Economia de água (simulado)</h2>
+
+    <p>Irrigação tradicional</p>
+    <div class="bar"><div class="fill" style="width: 90%"></div></div>
+
+    <p>Irrigação inteligente</p>
+    <div class="bar"><div class="fill" style="width: 35%"></div></div>
+  </div>
+
+  <!-- PENSAMENTO COMPUTACIONAL -->
+  <div class="card">
+    <div class="tag">PENSAMENTO COMPUTACIONAL</div>
+    <h2>🧠 Aplicação no projeto</h2>
+    <ul>
+      <li><b>Decomposição:</b> dividir o problema da irrigação</li>
+      <li><b>Padrões:</b> identificar solo seco/úmido</li>
+      <li><b>Algoritmo:</b> regras de ativação automática</li>
+      <li><b>Automação:</b> execução sem intervenção humana</li>
+    </ul>
+  </div>
+
+  <!-- VÍDEO -->
+  <div class="card">
+    <div class="tag">VÍDEO</div>
+    <h2>🎥 Explicação do projeto</h2>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <p style="font-size:12px;opacity:0.7;">(substitua pelo seu vídeo do projeto)</p>
+  </div>
+
+</section>
+
+<footer>
+  <p>Projeto Agrinho 2026 - Pensamento Computacional 💚</p>
+</footer>
+
+<script>
+function ativar() {
+  document.getElementById("status").innerText = "🚨 Solo seco detectado → Irrigação ATIVADA";
+  document.getElementById("status").style.color = "#22c55e";
+}
+
+function desativar() {
+  document.getElementById("status").innerText = "💧 Solo úmido → Irrigação DESLIGADA";
+  document.getElementById("status").style.color = "#38bdf8";
+}
+</script>
 
 </body>
 </html>
