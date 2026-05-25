@@ -1,0 +1,8 @@
+<div class="card">
+  <h2>🎵 Ambiente do Campo</h2>
+  <p>Som ambiente para representar o meio rural sustentável.</p>
+
+  <audio controls>
+    <source src="natureza.mp3" type="audio/mpeg">
+  </audio>
+</div>
