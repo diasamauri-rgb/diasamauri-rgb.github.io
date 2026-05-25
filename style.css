@@ -1,14 +1,15 @@
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b1220;
-  color: white;
+  margin: 0;
+  background: #f3f7f3;
+  color: #1f2937;
 }
 
 header {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  color: white;
   text-align: center;
-  padding: 60px;
-  background: linear-gradient(120deg, #16a34a, #22c55e);
+  padding: 30px;
 }
 
 main {
@@ -18,47 +19,54 @@ main {
 }
 
 .card {
-  background: #111c33;
+  background: white;
   padding: 20px;
   margin: 20px 0;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 button {
-  padding: 10px 15px;
   margin: 5px;
+  padding: 10px 15px;
   border: none;
-  background: #22c55e;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
   border-radius: 8px;
+  cursor: pointer;
+  background: #16a34a;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #15803d;
 }
 
 .bar {
-  height: 15px;
-  background: #1e293b;
+  width: 100%;
+  background: #e5e7eb;
+  height: 20px;
   border-radius: 10px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .fill {
   height: 100%;
+  width: 0%;
+  transition: 1s;
 }
 
 .red {
-  width: 90%;
   background: #ef4444;
 }
 
 .green {
-  width: 35%;
   background: #22c55e;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background: #020617;
+  background: #111827;
+  color: white;
 }
