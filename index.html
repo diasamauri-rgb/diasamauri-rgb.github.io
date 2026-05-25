@@ -3,106 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Portfólio</title>
+  <title>Agrinho 2026 - Pensamento Computacional</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #4facfe, #00f2fe);
+    }
+
+    body {
+      background: linear-gradient(120deg, #00c6ff, #0072ff);
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 40px;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: white;
+      color: #0072ff;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
       transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px 20px;
     }
 
     .card {
       background: rgba(255,255,255,0.15);
-      padding: 30px;
-      border-radius: 20px;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 15px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    footer {
       text-align: center;
-      width: 320px;
+      padding: 30px;
+      background: rgba(0,0,0,0.2);
+      margin-top: 40px;
     }
 
-    h1 {
-      margin-bottom: 5px;
-    }
-
-    p {
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-    }
-
-    .dark {
-      background: #111;
-      color: white;
-    }
-
-    .dark .card {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .footer {
-      margin-top: 15px;
-      font-size: 12px;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>Olá 👋</h1>
-    <p>Bem-vindo ao meu site no GitHub Pages</p>
+  <!-- HERO -->
+  <header>
+    <h1>🌱 Agrinho 2026</h1>
+    <p>Concurso de Pensamento Computacional</p>
+    <p><b>“Agro forte, futuro sustentável”</b></p>
 
-    <p id="clock"></p>
+    <a class="btn" href="#sobre">Saiba mais</a>
+  </header>
 
-    <button onclick="toggleTheme()">Modo Escuro</button>
-    <button onclick="mensagem()">Clique aqui</button>
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="card">
+      <h2>📘 O que é o concurso?</h2>
+      <p>
+        O Agrinho é um programa educacional que incentiva estudantes a desenvolverem
+        criatividade, pensamento crítico e soluções para problemas reais do campo e da sociedade.
+      </p>
+    </div>
+  </section>
 
-    <p id="msg"></p>
+  <!-- OBJETIVOS -->
+  <section>
+    <div class="card">
+      <h2>🧠 Pensamento Computacional</h2>
+      <ul>
+        <li>Abstração de problemas</li>
+        <li>Resolução lógica</li>
+        <li>Criação de soluções tecnológicas</li>
+        <li>Uso de criatividade e inovação</li>
+      </ul>
+    </div>
+  </section>
 
-    <div class="footer">Feito com HTML + CSS + JS</div>
-  </div>
+  <!-- TEMA -->
+  <section>
+    <div class="card">
+      <h2>🌍 Tema 2026</h2>
+      <p>
+        “Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente”
+      </p>
+    </div>
+  </section>
 
-  <script>
-    // relógio
-    setInterval(() => {
-      document.getElementById("clock").innerText =
-        new Date().toLocaleTimeString();
-    }, 1000);
+  <!-- PARTICIPAÇÃO -->
+  <section>
+    <div class="card">
+      <h2>👩‍💻 Como participar</h2>
+      <ul>
+        <li>Formar equipe com orientação de um professor</li>
+        <li>Escolher um problema do cotidiano</li>
+        <li>Aplicar pensamento computacional</li>
+        <li>Desenvolver uma solução criativa (projeto, robô, app ou ideia)</li>
+      </ul>
+    </div>
+  </section>
 
-    // mensagem botão
-    function mensagem() {
-      document.getElementById("msg").innerText =
-        "Seu site está funcionando 🚀";
-    }
+  <!-- CTA -->
+  <section>
+    <div class="card" style="text-align:center;">
+      <h2>🚀 Pronto para inovar?</h2>
+      <p>Crie seu projeto e transforme o futuro com tecnologia e criatividade.</p>
+    </div>
+  </section>
 
-    // modo escuro
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
+  <footer>
+    <p>Feito para o Concurso Agrinho 2026 💚</p>
+  </footer>
 
 </body>
 </html>
