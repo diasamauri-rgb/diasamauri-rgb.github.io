@@ -3,231 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agrinho 2026 - Projeto Inteligente</title>
+  <title>Agrinho 2026 - Irrigação Inteligente</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: #0b1220;
-      color: white;
-    }
-
-    header {
-      background: linear-gradient(120deg, #16a34a, #22c55e);
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    header h1 {
-      font-size: 42px;
-      font-weight: 800;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    .card {
-      background: #111c33;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    h2 {
-      color: #22c55e;
-      margin-bottom: 10px;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
-
-    ul {
-      margin-left: 20px;
-      margin-top: 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #22c55e;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    /* gráfico simples */
-    .bar {
-      height: 20px;
-      border-radius: 10px;
-      margin: 10px 0;
-      background: #1e293b;
-      overflow: hidden;
-    }
-
-    .fill {
-      height: 100%;
-      background: #22c55e;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
-
-    .simulacao {
-      text-align: center;
-      padding: 20px;
-    }
-
-    button {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .status {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #020617;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
   <h1>🌱 Agrinho 2026</h1>
-  <p>Projeto de Pensamento Computacional</p>
-  <p><b>“Agricultura inteligente para um futuro sustentável”</b></p>
+  <p>Irrigação Inteligente com Pensamento Computacional</p>
 </header>
 
-<section>
+<main>
 
-  <!-- PROBLEMA -->
-  <div class="card">
-    <div class="tag">PROBLEMA</div>
-    <h2>🌾 Desperdício de água na agricultura</h2>
-    <p>
-      A irrigação tradicional usa água sem controle, causando desperdício e aumento de custos.
-    </p>
-
-    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae" alt="campo irrigação">
-  </div>
-
-  <!-- SOLUÇÃO -->
-  <div class="card">
-    <div class="tag">SOLUÇÃO</div>
-    <h2>💡 Irrigação Inteligente Automatizada</h2>
-    <p>
-      Um sistema com sensores de umidade que ativa a irrigação apenas quando necessário.
-    </p>
-
-    <ul>
-      <li>Sensor de umidade do solo</li>
-      <li>Microcontrolador (Arduino/IoT)</li>
-      <li>Ativação automática de água</li>
-      <li>Controle inteligente de recursos</li>
-    </ul>
-  </div>
-
-  <!-- SIMULAÇÃO -->
-  <div class="card simulacao">
-    <div class="tag">SIMULAÇÃO</div>
-    <h2>🤖 Sistema em funcionamento</h2>
-
-    <p>Estado do solo:</p>
-    <button onclick="ativar()">Simular solo seco</button>
-    <button onclick="desativar()">Simular solo úmido</button>
-
-    <p class="status" id="status">Aguardando leitura...</p>
-  </div>
-
-  <!-- GRÁFICO -->
-  <div class="card">
-    <div class="tag">RESULTADOS</div>
-    <h2>📊 Economia de água (simulado)</h2>
-
-    <p>Irrigação tradicional</p>
-    <div class="bar"><div class="fill" style="width: 90%"></div></div>
-
-    <p>Irrigação inteligente</p>
-    <div class="bar"><div class="fill" style="width: 35%"></div></div>
-  </div>
-
-  <!-- PENSAMENTO COMPUTACIONAL -->
-  <div class="card">
-    <div class="tag">PENSAMENTO COMPUTACIONAL</div>
-    <h2>🧠 Aplicação no projeto</h2>
-    <ul>
-      <li><b>Decomposição:</b> dividir o problema da irrigação</li>
-      <li><b>Padrões:</b> identificar solo seco/úmido</li>
-      <li><b>Algoritmo:</b> regras de ativação automática</li>
-      <li><b>Automação:</b> execução sem intervenção humana</li>
-    </ul>
-  </div>
-
-  <!-- VÍDEO -->
-  <div class="card">
-    <div class="tag">VÍDEO</div>
-    <h2>🎥 Explicação do projeto</h2>
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-    <p style="font-size:12px;opacity:0.7;">(substitua pelo seu vídeo do projeto)</p>
-  </div>
-
+<section class="card">
+  <h2>💡 Problema</h2>
+  <p>Desperdício de água na agricultura por falta de controle na irrigação.</p>
 </section>
 
+<section class="card">
+  <h2>🤖 Simulação do Sistema</h2>
+
+  <p>Escolha a umidade do solo:</p>
+
+  <button onclick="setUmidade(20)">Solo seco</button>
+  <button onclick="setUmidade(70)">Solo úmido</button>
+
+  <p>Umidade: <span id="umidade">--</span>%</p>
+  <p id="acao">Aguardando leitura...</p>
+</section>
+
+<section class="card">
+  <h2>📊 Eficiência do Sistema</h2>
+
+  <p>Tradicional</p>
+  <div class="bar"><div class="fill red"></div></div>
+
+  <p>Inteligente</p>
+  <div class="bar"><div class="fill green"></div></div>
+</section>
+
+<section class="card">
+  <h2>🧠 Pensamento Computacional</h2>
+  <ul>
+    <li>Decomposição do problema</li>
+    <li>Identificação de padrões</li>
+    <li>Criação de algoritmo</li>
+    <li>Automação da irrigação</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>🎥 Vídeo do Projeto</h2>
+
+  <iframe width="100%" height="300"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    allowfullscreen>
+  </iframe>
+</section>
+
+</main>
+
 <footer>
-  <p>Projeto Agrinho 2026 - Pensamento Computacional 💚</p>
+  <p>Projeto Agrinho 2026 🌱</p>
 </footer>
 
-<script>
-function ativar() {
-  document.getElementById("status").innerText = "🚨 Solo seco detectado → Irrigação ATIVADA";
-  document.getElementById("status").style.color = "#22c55e";
-}
-
-function desativar() {
-  document.getElementById("status").innerText = "💧 Solo úmido → Irrigação DESLIGADA";
-  document.getElementById("status").style.color = "#38bdf8";
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
