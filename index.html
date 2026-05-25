@@ -19,7 +19,9 @@
 
 <section class="card">
   <h2>💡 Problema</h2>
-  <p>Desperdício de água na agricultura por falta de controle na irrigação.</p>
+  <p>A irrigação tradicional desperdiça água por falta de controle inteligente.</p>
+  <p>O sistema muitas vezes irriga mesmo com solo úmido ou chuva, gerando prejuízos e desperdício hídrico.</p>
+  <p>Objetivo: automatizar a irrigação com base em dados reais do solo.</p>
 </section>
 
 <section class="card">
@@ -29,6 +31,7 @@
 
   <button onclick="setUmidade(20)">Solo seco</button>
   <button onclick="setUmidade(70)">Solo úmido</button>
+  <button onclick="ativarChuva()">🌧️ Simular chuva</button>
 
   <p>Umidade: <span id="umidade">--</span>%</p>
   <p id="acao">Aguardando leitura...</p>
@@ -38,20 +41,26 @@
   <h2>📊 Eficiência do Sistema</h2>
 
   <p>Tradicional</p>
-  <div class="bar"><div class="fill red"></div></div>
+  <div class="bar"><div class="fill red" id="tradicional"></div></div>
 
   <p>Inteligente</p>
-  <div class="bar"><div class="fill green"></div></div>
+  <div class="bar"><div class="fill green" id="inteligente"></div></div>
 </section>
 
 <section class="card">
   <h2>🧠 Pensamento Computacional</h2>
   <ul>
-    <li>Decomposição do problema</li>
-    <li>Identificação de padrões</li>
-    <li>Criação de algoritmo</li>
+    <li>Decomposição do problema em sensores e ações</li>
+    <li>Reconhecimento de padrões de umidade</li>
+    <li>Abstração das variáveis importantes</li>
+    <li>Criação de algoritmo de decisão</li>
     <li>Automação da irrigação</li>
   </ul>
+</section>
+
+<section class="card">
+  <h2>🛠️ Hardware</h2>
+  <p>ESP32, sensor de umidade, relé e válvula de água.</p>
 </section>
 
 <section class="card">
@@ -73,91 +82,3 @@
 
 </body>
 </html>
-<!-- Seção: Hardware e Viabilidade Financeira -->
-<section id="hardware-custos" style="font-family: 'Inter', system-ui, -apple-system, sans-serif; padding: 60px 20px; background-color: #ffffff; max-width: 1200px; margin: 0 auto; color: #1e293b;">
-    
-    <style>
-        .grid-tecnico { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; margin-top: 20px; }
-        .tabela-responsiva { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; }
-        .tabela-responsiva th { background-color: #0f172a; color: #ffffff; padding: 15px; text-align: left; font-weight: 600; font-size: 14px; }
-        .tabela-responsiva td { padding: 15px; border-bottom: 1px solid #e2e8f0; font-size: 14px; color: #475569; }
-        .tabela-responsiva tr:nth-child(even) { background-color: #f8fafc; }
-        .lista-hardware { list-style: none; padding: 0; margin: 0; }
-        .lista-hardware li { padding: 12px 0; border-bottom: 1px dashed #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
-        .tag-hardware { background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-family: monospace; font-weight: bold; }
-    </style>
-
-    <div class="grid-tecnico">
-        
-        <!-- Bloco de Engenharia de Hardware -->
-        <div style="background: #f8fafc; padding: 35px; border-radius: 20px; border: 1px solid #e2e8f0;">
-            <div style="color: #0d9488; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">🛠️ Especificação Técnica</div>
-            <h3 style="font-size: 24px; color: #0f172a; margin: 0 0 20px 0; font-weight: 700;">Componentes do Protótipo</h3>
-            
-            <ul class="lista-hardware">
-                <li>
-                    <span>🧠 Microcontrolador Principal</span>
-                    <span class="tag-hardware">ESP32 Wi-Fi / Bluetooth</span>
-                </li>
-                <li>
-                    <span>🌱 Sensor de Umidade do Solo</span>
-                    <span class="tag-hardware">Higrômetro Capacitivo v1.2</span>
-                </li>
-                <li>
-                    <span>🌡️ Sensor de Clima</span>
-                    <span class="tag-hardware">DHT22 (Temp / Umidade Ar)</span>
-                </li>
-                <li>
-                    <span>🚰 Atuador de Fluxo</span>
-                    <span class="tag-hardware">Módulo Relé + Solenóide 12V</span>
-                </li>
-                <li>
-                    <span>⚡ Infraestrutura de Energia</span>
-                    <span class="tag-hardware">Painel Solar 5W + Li-Po Core</span>
-                </li>
-            </ul>
-            <p style="font-size: 12px; color: #64748b; margin-top: 15px; line-height: 1.4;">
-                *Nota: A escolha de um sensor capacitivo evita a corrosão precoce dos eletrodos, garantindo maior vida útil em campo em comparação com modelos resistivos genéricos.
-            </p>
-        </div>
-
-        <!-- Bloco de Viabilidade Econômica -->
-        <div>
-            <div style="color: #2563eb; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">📊 Retorno sobre o Investimento</div>
-            <h3 style="font-size: 24px; color: #0f172a; margin: 0 0 20px 0; font-weight: 700;">Análise de Viabilidade Econômica</h3>
-            
-            <table class="tabela-responsiva">
-                <thead>
-                    <tr>
-                        <th>Critério Analisado</th>
-                        <th>Irrigação Comum</th>
-                        <th style="color: #34d399;">Nosso Sistema</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Custo de Instalação</strong></td>
-                        <td>Baixo (Temporizadores simples)</td>
-                        <td>Médio (Sensores + Placa)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Desperdício Hídrico</strong></td>
-                        <td>Alto (Irriga mesmo chovendo)</td>
-                        <td>Próximo a zero (Sob demanda)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Manutenção do Solo</strong></td>
-                        <td>Risco de lixiviação de nutrientes</td>
-                        <td>Preservação da camada fértil</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Retorno Financeiro (Payback)</strong></td>
-                        <td>Inexistente (Gasto contínuo)</td>
-                        <td>Estimado em 6 a 8 meses</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-</section>
