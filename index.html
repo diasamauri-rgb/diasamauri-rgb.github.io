@@ -3,29 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agrinho 2026 - Final Master</title>
+<title>Agrinho 2026</title>
 <link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
-
 <!-- INTRO -->
 <div id="intro" class="intro">
+
   <div class="intro-box">
     <h1>🌱 Agrinho 2026</h1>
     <p>Campo + Tecnologia + Futuro</p>
 
-    <button id="enterBtn" class="enter-btn">▶ Entrar</button>
+    <button id="enterBtn">▶ Entrar</button>
 
-    <div class="loader"></div>
-
-    <audio id="enterSound">
+    <!-- 🎵 MÚSICA -->
+    <audio id="music">
       <source src="audio/sementes-do-bem.mp3" type="audio/mpeg">
     </audio>
+
   </div>
+
 </div>
 
 <!-- SITE -->
@@ -33,71 +32,27 @@
 
 <header>
   <h1>🌱 Agrinho 2026</h1>
-
-  <nav>
-    <button onclick="showSection('home')">Início</button>
-    <button onclick="showSection('quiz')">Quiz</button>
-    <button onclick="showSection('game')">Jogo</button>
-    <button onclick="showSection('impact')">Impacto</button>
-    <button onclick="showSection('video')">Vídeo</button>
-    <button onclick="toggleTheme()">🌙/☀️</button>
-  </nav>
 </header>
 
 <main>
 
-<!-- HOME -->
-<section id="home" class="section active">
-  <h2>🌱 O Agro na nossa vida</h2>
-  <div class="card">
-    <p>
-      O agronegócio está presente em tudo que consumimos. Ele conecta o campo e a cidade e garante alimentos todos os dias.
-      Este projeto mostra como tecnologia e agricultura trabalham juntas para o futuro.
-    </p>
-  </div>
+<section class="section">
+  <h2>🌾 Sobre o Agro</h2>
+  <p>
+    O agro é essencial para a nossa vida. Ele produz alimentos e conecta o campo com a cidade.
+  </p>
 </section>
 
 <!-- QUIZ -->
-<section id="quiz" class="section">
+<section class="section">
   <h2>🧠 Quiz Educativo</h2>
+
   <p id="qtext">Clique para iniciar</p>
   <div id="answers"></div>
+
   <p id="score"></p>
-</section>
 
-<!-- GAME -->
-<section id="game" class="section">
-  <h2>🎮 Jogo com Fases</h2>
-
-  <canvas id="gameCanvas" width="600" height="300"></canvas>
-
-  <p>
-    Fase: <span id="level">1</span> |
-    Pontuação: <span id="gameScore">0</span>
-  </p>
-
-  <button onclick="startGame()">Start</button>
-  <button onclick="resetGame()">Reset</button>
-
-  <div class="card">
-    <h3>🏆 Ranking</h3>
-    <ol id="rankList"></ol>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section id="impact" class="section">
-  <h2>📊 Impacto do Agrinho</h2>
-  <canvas id="chart"></canvas>
-</section>
-
-<!-- VIDEO -->
-<section id="video" class="section">
-  <h2>🎥 Vídeo</h2>
-  <iframe 
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-    allowfullscreen>
-  </iframe>
+  <button onclick="startQuiz()">Iniciar Quiz</button>
 </section>
 
 </main>
