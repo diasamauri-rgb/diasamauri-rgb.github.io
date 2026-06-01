@@ -64,41 +64,10 @@ const g=document.getElementById("gameCanvas"); const gtx=g.getContext("2d");
 let player={x:280,y:260,w:40}, items=[], score=0, level=1, loop;
 const rankList=document.getElementById("rankList");
 
-function startGame(){
-  loop=setInterval(update,20); window.addEventListener("keydown",move);
-}
-
-function resetGame(){
-  clearInterval(loop); score=0; items=[]; level=1;
-  document.getElementById("gameScore").innerText=0;
-  document.getElementById("level").innerText=1;
-}
-
-function move(e){
-  if(e.key==="ArrowLeft") player.x-=10;
-  if(e.key==="ArrowRight") player.x+=10;
-}
+function startGame(){loop=setInterval(update,20); window.addEventListener("keydown",move);}
+function resetGame(){clearInterval(loop); score=0; items=[]; level=1; document.getElementById("gameScore").innerText=0; document.getElementById("level").innerText=1;}
+function move(e){if(e.key==="ArrowLeft") player.x-=10; if(e.key==="ArrowRight") player.x+=10;}
 
 function update(){
   gtx.clearRect(0,0,600,300);
-  gtx.fillStyle="green"; gtx.fillRect(player.x,player.y,player.w,10);
-
-  if(Math.random()<0.03+level*0.01){items.push({x:Math.random()*580,y:0});}
-
-  items.forEach((it,i)=>{
-    it.y+=2+level*0.5;
-    gtx.fillRect(it.x,it.y,10,10);
-    if(it.y>player.y && it.x>player.x && it.x<player.x+40){
-      score++; items.splice(i,1);
-      if(score%10===0){level++; document.getElementById("level").innerText=level;}
-      document.getElementById("gameScore").innerText=score;
-      saveRanking(score);
-    }
-  });
-}
-
-/* RANKING LOCAL */
-function saveRanking(s){
-  let r=JSON.parse(localStorage.getItem("ranking")||"[]");
-  r.push(s);
-  r.sort((
+  gtx.fillStyle="green"; gtx.fillRect(player.x,
