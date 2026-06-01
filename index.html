@@ -3,82 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agrinho 2026 - Irrigação Inteligente</title>
-
+  <title>Agrinho 2026 - Portal Ultra</title>
   <link rel="stylesheet" href="style.css">
-</head>
 
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 <body>
+
+<canvas id="particles"></canvas>
 
 <header>
   <h1>🌱 Agrinho 2026</h1>
-  <p>Irrigação Inteligente com Pensamento Computacional</p>
+  <nav>
+    <button onclick="showSection('home')">Início</button>
+    <button onclick="showSection('quiz')">Quiz 🧠</button>
+    <button onclick="showSection('game')">Jogo 🎮</button>
+    <button onclick="showSection('impact')">Impacto 📊</button>
+    <button onclick="toggleTheme()">🌙/☀️</button>
+  </nav>
 </header>
 
 <main>
+  <section id="home" class="section active">
+    <h2>Bem-vindo ao Agrinho 2026</h2>
+    <p>Portal educativo com foco em sustentabilidade, cidadania e valorização do campo.</p>
+  </section>
 
-<section class="card">
-  <h2>💡 Problema</h2>
-  <p>A irrigação tradicional desperdiça água por falta de controle inteligente.</p>
-  <p>O sistema muitas vezes irriga mesmo com solo úmido ou chuva, gerando prejuízos e desperdício hídrico.</p>
-  <p>Objetivo: automatizar a irrigação com base em dados reais do solo.</p>
-</section>
+  <section id="quiz" class="section">
+    <h2>🧠 Quiz Agrinho</h2>
+    <p id="question">Clique para iniciar o quiz</p>
+    <div id="answers"></div>
+    <p id="quizScore"></p>
+  </section>
 
-<section class="card">
-  <h2>🤖 Simulação do Sistema</h2>
+  <section id="game" class="section">
+    <h2>🎮 Mini-Jogo Educativo</h2>
+    <p>Ajude a colher os produtos do campo antes que estraguem!</p>
+    <canvas id="gameCanvas" width="600" height="300"></canvas>
+    <p id="gameScore"></p>
+    <button onclick="startGame()">Começar</button>
+  </section>
 
-  <p>Escolha a umidade do solo:</p>
-
-  <button onclick="setUmidade(20)">Solo seco</button>
-  <button onclick="setUmidade(70)">Solo úmido</button>
-  <button onclick="ativarChuva()">🌧️ Simular chuva</button>
-
-  <p>Umidade: <span id="umidade">--</span>%</p>
-  <p id="acao">Aguardando leitura...</p>
-</section>
-
-<section class="card">
-  <h2>📊 Eficiência do Sistema</h2>
-
-  <p>Tradicional</p>
-  <div class="bar"><div class="fill red" id="tradicional"></div></div>
-
-  <p>Inteligente</p>
-  <div class="bar"><div class="fill green" id="inteligente"></div></div>
-</section>
-
-<section class="card">
-  <h2>🧠 Pensamento Computacional</h2>
-  <ul>
-    <li>Decomposição do problema em sensores e ações</li>
-    <li>Reconhecimento de padrões de umidade</li>
-    <li>Abstração das variáveis importantes</li>
-    <li>Criação de algoritmo de decisão</li>
-    <li>Automação da irrigação</li>
-  </ul>
-</section>
-
-<section class="card">
-  <h2>🛠️ Hardware</h2>
-  <p>ESP32, sensor de umidade, relé e válvula de água.</p>
-</section>
-
-<section class="card">
-  <h2>🎥 Vídeo do Projeto</h2>
-
-  <iframe width="100%" height="300"
-    src="https://www.youtube.com/embed/Lv4gPz8j6f0"
-    allowfullscreen>
-  </iframe>
-</section>
-
+  <section id="impact" class="section">
+    <h2>📊 Impacto do Agrinho</h2>
+    <canvas id="chart"></canvas>
+  </section>
 </main>
 
 <footer>
-  <p>Projeto Agrinho 2026 🌱</p>
+  <p>© 2026 Agrinho - Portal Ultra</p>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
