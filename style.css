@@ -1,72 +1,11 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f3f7f3;
-  color: #1f2937;
-}
-
-header {
-  background: linear-gradient(90deg, #16a34a, #22c55e);
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
-
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-button {
-  margin: 5px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #16a34a;
-  color: white;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #15803d;
-}
-
-.bar {
-  width: 100%;
-  background: #e5e7eb;
-  height: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.fill {
-  height: 100%;
-  width: 0%;
-  transition: 1s;
-}
-
-.red {
-  background: #ef4444;
-}
-
-.green {
-  background: #22c55e;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111827;
-  color: white;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif;}
+body {transition:0.3s; overflow-x:hidden; background:#f4fff5; color:#1b3b1b;}
+.dark {background:#0f1f14; color:#fff;}
+header{display:flex; justify-content:space-between; align-items:center; padding:15px; background:#27ae60; color:white;}
+header nav button{margin:0 5px; padding:8px 12px; border:none; border-radius:6px; cursor:pointer; background:#2ecc71; color:white;}
+header nav button:hover{background:#1e7e34;}
+main{padding:20px;}
+.section{display:none; max-width:900px; margin:20px auto; padding:20px; background:white; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
+.section.active{display:block;}
+canvas#particles{position:fixed; top:0; left:0; z-index:-1;}
+canvas#gameCanvas{background:#eaffea; display:block; margin:15px auto; border-radius:8px; border:2px solid #27ae60;}
