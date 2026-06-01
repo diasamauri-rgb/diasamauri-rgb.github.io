@@ -1,7 +1,6 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
-body{background:#eaffea;color:#1b3b1b;}
-
+body{background:#eaffea;color:#1b3b1b;transition:0.3s;}
 .dark{background:#0f1f14;color:white;}
 
 .intro{
@@ -9,19 +8,13 @@ body{background:#eaffea;color:#1b3b1b;}
   background:linear-gradient(120deg,#27ae60,#2ecc71);
   display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:white;
 }
-
 .intro button{margin-top:20px;padding:12px 20px;border:none;border-radius:8px;cursor:pointer;}
 
-header{
-  display:flex;justify-content:space-between;padding:15px;background:#27ae60;color:white;
-}
-
+header{display:flex;justify-content:space-between;padding:15px;background:#27ae60;color:white;}
 button{margin:5px;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;background:#2ecc71;color:white;}
 
 .section{display:none;padding:20px;max-width:900px;margin:auto;}
 .section.active{display:block;}
-
 .card{background:#dff5e3;padding:15px;border-radius:10px;margin-top:10px;}
-
 canvas#particles{position:fixed;z-index:-1;}
 canvas#gameCanvas{background:#e0ffe0;display:block;margin:15px auto;border-radius:8px;border:2px solid #27ae60;}
