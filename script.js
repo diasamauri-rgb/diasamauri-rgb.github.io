@@ -1,77 +1,104 @@
+/* INTRO */
+function startSite(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("site").style.display="block";
+}
+
 /* THEME */
-function showTheme(){ document.body.classList.toggle("dark"); }
+function toggleTheme(){document.body.classList.toggle("dark");}
 
 /* NAV */
 function showSection(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  const el = document.getElementById(id);
-  if(el) el.classList.add('active');
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 }
 
 /* PARTICLES */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let particles = [];
-for(let i=0;i<80;i++){ particles.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*2.5 }); }
-function draw(){ ctx.clearRect(0,0,canvas.width,canvas.height); ctx.fillStyle="rgba(46,204,113,0.5)"; particles.forEach(p=>{ ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); p.y+=0.4; if(p.y>canvas.height){ p.y=0; p.x=Math.random()*canvas.width; } }); requestAnimationFrame(draw); }
-draw();
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+let particles=[];
+for(let i=0;i<60;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2});}
+function anim(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="rgba(46,204,113,0.5)";
+  particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();p.y+=0.5;if(p.y>canvas.height){p.y=0;p.x=Math.random()*canvas.width;}});
+  requestAnimationFrame(anim);
+}
+anim();
 
 /* QUIZ */
-const quizData=[
-  {q:"O que o Agrinho promove?", a:["Tecnologia de guerra","Educação e sustentabilidade","Jogos"], correct:1},
-  {q:"O Agrinho conecta:", a:["Cidade e campo","Mar e céu","Somente cidades"], correct:0}
+const quiz=[
+  {q:"O agro produz o quê?",a:["Alimentos","Carros","Internet"],c:0},
+  {q:"Campo e cidade são:",a:["Ligados","Separados","Inimigos"],c:0},
+  {q:"Tecnologia no campo serve para:",a:["Ajudar produção","Atrapalhar","Nada"],c:0}
 ];
-let qIndex=0;
-function startQuiz(){ showQuestion(); }
-function showQuestion(){
-  const q=quizData[qIndex];
-  document.getElementById("question").innerText=q.q;
-  const ans=document.getElementById("answers"); ans.innerHTML="";
-  q.a.forEach((text,i)=>{
-    const btn=document.createElement("button");
-    btn.innerText=text;
-    btn.onclick=()=>{ 
-      if(i===q.correct){ alert("✔ Correto!"); saveQuiz(); } 
-      else { alert("❌ Tente novamente"); } 
-      qIndex=(qIndex+1)%quizData.length; 
-      showQuestion(); 
+let i=0; let points=0;
+function startQuiz(){show();}
+function show(){
+  const q=quiz[i]; document.getElementById("qtext").innerText=q.q;
+  const box=document.getElementById("answers"); box.innerHTML="";
+  q.a.forEach((t,index)=>{
+    const b=document.createElement("button"); b.innerText=t;
+    b.onclick=()=>{
+      if(index===q.c){points++;}
+      i=(i+1)%quiz.length;
+      document.getElementById("score").innerText="Pontos: "+points;
+      show();
     };
-    ans.appendChild(btn);
+    box.appendChild(b);
   });
-  document.getElementById("quizScore").innerText="Pontuação: "+(localStorage.getItem("quizScore")||0);
 }
-function saveQuiz(){ let s=localStorage.getItem("quizScore")||0; s++; localStorage.setItem("quizScore",s); document.getElementById("quizScore").innerText="Pontuação: "+s; }
 
 /* CHART */
 new Chart(document.getElementById("chart"),{
   type:"bar",
   data:{
-    labels:["Educação","Sustentabilidade","Campo","Cidade"],
-    datasets:[{label:"Impacto",data:[90,95,85,88],backgroundColor:"#27ae60"}]
+    labels:["Educação","Campo","Cidade","Sustentabilidade"],
+    datasets:[{label:"Impacto",data:[95,90,88,97],backgroundColor:"#27ae60"}]
   }
 });
 
-/* JOGO */
-const gameCanvas=document.getElementById("gameCanvas");
-const gctx=gameCanvas.getContext("2d");
-let gameScore=0, items=[], player={x:280,y:260,width:40,height:10}, gameInterval;
+/* GAME NÍVEL 3 COM FASES E RANKING */
+const g=document.getElementById("gameCanvas"); const gtx=g.getContext("2d");
+let player={x:280,y:260,w:40}, items=[], score=0, level=1, loop;
+const rankList=document.getElementById("rankList");
 
 function startGame(){
-  gameScore=0;
-  items=[];
-  document.getElementById("gameScore").innerText="Pontuação: 0";
-  gameInterval=setInterval(updateGame,20);
-  window.addEventListener("keydown",movePlayer);
+  loop=setInterval(update,20); window.addEventListener("keydown",move);
 }
 
-function movePlayer(e){
-  if(e.key==="ArrowLeft" && player.x>0) player.x-=10;
-  if(e.key==="ArrowRight" && player.x<560) player.x+=10;
+function resetGame(){
+  clearInterval(loop); score=0; items=[]; level=1;
+  document.getElementById("gameScore").innerText=0;
+  document.getElementById("level").innerText=1;
 }
 
-function updateGame(){
-  gctx.clearRect(0,0,600,300);
-  gctx.fillStyle="#27ae60";
-  gctx.fillRect
+function move(e){
+  if(e.key==="ArrowLeft") player.x-=10;
+  if(e.key==="ArrowRight") player.x+=10;
+}
+
+function update(){
+  gtx.clearRect(0,0,600,300);
+  gtx.fillStyle="green"; gtx.fillRect(player.x,player.y,player.w,10);
+
+  if(Math.random()<0.03+level*0.01){items.push({x:Math.random()*580,y:0});}
+
+  items.forEach((it,i)=>{
+    it.y+=2+level*0.5;
+    gtx.fillRect(it.x,it.y,10,10);
+    if(it.y>player.y && it.x>player.x && it.x<player.x+40){
+      score++; items.splice(i,1);
+      if(score%10===0){level++; document.getElementById("level").innerText=level;}
+      document.getElementById("gameScore").innerText=score;
+      saveRanking(score);
+    }
+  });
+}
+
+/* RANKING LOCAL */
+function saveRanking(s){
+  let r=JSON.parse(localStorage.getItem("ranking")||"[]");
+  r.push(s);
+  r.sort((
