@@ -1,64 +1,222 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agrinho 2026</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Aventura</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            color: #263238;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        main {
+            max-width: 700px;
+            margin: auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px #0002;
+        }
+
+        .passo {
+            display: none;
+        }
+
+        .passo.ativo {
+            display: block;
+        }
+
+        .passo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            display: inline-block;
+            margin: 8px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2e7d32;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1b5e20;
+        }
+    </style>
 </head>
 
 <body>
+    <main>
+        <h1>Minha Aventura pelo Brasil</h1>
 
-<!-- INTRO -->
-<div id="intro" class="intro">
+        <div class="passo ativo" id="passo-0">
+            <p>
+                Você encontrou um mapa misterioso. Para onde
+                deseja viajar para começar sua aventura?
+            </p>
 
-  <div class="intro-box">
-    <h1>🌱 Agrinho 2026</h1>
-    <p>Campo + Tecnologia + Futuro</p>
+            <button class="btn-proximo" data-proximo="1">
+                Rio de Janeiro
+            </button>
 
-    <button id="enterBtn">▶ Entrar</button>
+            <button class="btn-proximo" data-proximo="2">
+                Pernambuco
+            </button>
+        </div>
 
-    <!-- 🎵 MÚSICA -->
-    <audio id="music">
-      <source src="audio/sementes-do-bem.mp3" type="audio/mpeg">
-    </audio>
+        <div class="passo" id="passo-1">
+            <p>
+                Você está no Rio de Janeiro! Uma pista misteriosa
+                indica que existe um segredo escondido.
+            </p>
 
-  </div>
+            <button class="btn-proximo" data-proximo="3">
+                Procurar pista
+            </button>
 
-</div>
+            <button class="btn-proximo" data-proximo="4">
+                Desistir
+            </button>
+        </div>
 
-<!-- SITE -->
-<div id="site" style="display:none;">
+        <div class="passo" id="passo-2">
+            <p>
+                Você chegou a Pernambuco e encontrou uma caixa
+                misteriosa na praia.
+            </p>
 
-<header>
-  <h1>🌱 Agrinho 2026</h1>
-</header>
+            <button class="btn-proximo" data-proximo="5">
+                Abrir a caixa
+            </button>
 
-<main>
+            <button class="btn-proximo" data-proximo="6">
+                Procurar outra pista
+            </button>
+        </div>
 
-<section class="section">
-  <h2>🌾 Sobre o Agro</h2>
-  <p>
-    O agro é essencial para a nossa vida. Ele produz alimentos e conecta o campo com a cidade.
-  </p>
-</section>
+        <div class="passo" id="passo-3">
+            <p>
+                Você encontrou uma pista que aponta para a
+                floresta amazônica!
+            </p>
 
-<!-- QUIZ -->
-<section class="section">
-  <h2>🧠 Quiz Educativo</h2>
+            <button class="btn-proximo" data-proximo="7">
+                Seguir para a Amazônia
+            </button>
+        </div>
 
-  <p id="qtext">Clique para iniciar</p>
-  <div id="answers"></div>
+        <div class="passo" id="passo-4">
+            <p>
+                Você decidiu descansar e deixar a aventura
+                para outro dia.
+            </p>
 
-  <p id="score"></p>
+            <button class="btn-proximo" data-proximo="0">
+                Recomeçar
+            </button>
+        </div>
 
-  <button onclick="startQuiz()">Iniciar Quiz</button>
-</section>
+        <div class="passo" id="passo-5">
+            <p>
+                Dentro da caixa, você encontrou um mapa antigo
+                com símbolos misteriosos.
+            </p>
 
-</main>
+            <button class="btn-proximo" data-proximo="7">
+                Seguir o mapa
+            </button>
+        </div>
 
-</div>
+        <div class="passo" id="passo-6">
+            <p>
+                Você encontrou pegadas na areia que levam
+                até uma trilha secreta.
+            </p>
 
-<script src="script.js"></script>
+            <button class="btn-proximo" data-proximo="7">
+                Seguir a trilha
+            </button>
+        </div>
+
+        <div class="passo" id="passo-7">
+            <p>
+                Na Amazônia, você encontra uma passagem escondida
+                entre as árvores.
+            </p>
+
+            <button class="btn-proximo" data-proximo="8">
+                Entrar na passagem
+            </button>
+        </div>
+
+        <div class="passo" id="passo-8">
+            <p>
+                Você atravessa a passagem e encontra ruínas
+                de uma antiga civilização.
+            </p>
+
+            <button class="btn-proximo" data-proximo="9">
+                Explorar as ruínas
+            </button>
+        </div>
+
+        <div class="passo" id="passo-9">
+            <p>
+                Entre as ruínas, você descobre um caminho
+                que leva a uma cidade escondida.
+            </p>
+
+            <button class="btn-proximo" data-proximo="10">
+                Seguir para a cidade
+            </button>
+        </div>
+
+        <div class="passo" id="passo-10">
+            <p>
+                Você está diante dos portões de uma cidade
+                perdida no coração da floresta.
+            </p>
+
+            <button class="btn-proximo" data-proximo="11">
+                Entrar na cidade perdida
+            </button>
+        </div>
+
+        <div class="passo" id="passo-11">
+            <img
+                src="img/cenario-passo11-cidade-perdida.png"
+                alt="Uma cidade maravilhosa perdida no Amazonas"
+            >
+
+            <p>
+                Dentro da cidade perdida, você descobre tesouros
+                inimagináveis e decide se dedicar a estudar
+                e preservar este lugar.
+            </p>
+
+            <button class="btn-proximo" data-proximo="0">
+                Jogar novamente
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
