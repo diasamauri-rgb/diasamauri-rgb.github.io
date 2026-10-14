@@ -1,83 +1,23 @@
+const avanca = document.querySelectorAll('.btn-proximo');
 
-// ===== ENTRAR NO SITE =====
-document.getElementById("enterBtn").addEventListener("click", () => {
+avanca.forEach(button => {
+    button.addEventListener('click', function () {
 
-  const music = document.getElementById("music");
+        // Identifica a etapa que está aparecendo
+        const atual = document.querySelector('.passo.ativo');
 
-  // tenta tocar música (pode ser bloqueado no navegador, mas funciona ao clicar)
-  music.play().catch(()=>{});
+        // Identifica o número da próxima etapa
+        const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
 
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("site").style.display = "block";
+        // Procura a próxima etapa no HTML
+        const proximo = document.getElementById(proximoPasso);
 
+        // Verifica se a etapa existe
+        if (atual && proximo) {
+            atual.classList.remove('ativo');
+            proximo.classList.add('ativo');
+        } else {
+            console.error('Etapa não encontrada:', proximoPasso);
+        }
+    });
 });
-
-// ===== QUIZ =====
-
-const quiz = [
-  {
-    q: "O agro produz principalmente:",
-    a: ["Alimentos", "Carros", "Celulares"],
-    c: 0
-  },
-  {
-    q: "Campo e cidade são:",
-    a: ["Conectados", "Separados", "Inimigos"],
-    c: 0
-  },
-  {
-    q: "A tecnologia no campo ajuda a:",
-    a: ["Aumentar produção", "Diminuir alimentos", "Nada"],
-    c: 0
-  }
-];
-
-let i = 0;
-let points = 0;
-
-function startQuiz(){
-  i = 0;
-  points = 0;
-  show();
-}
-
-function show(){
-
-  if(i >= quiz.length){
-    document.getElementById("qtext").innerText = "Quiz finalizado!";
-    document.getElementById("answers").innerHTML = "";
-    document.getElementById("score").innerText = "Pontuação: " + points;
-    return;
-  }
-
-  const q = quiz[i];
-  document.getElementById("qtext").innerText = q.q;
-
-  const box = document.getElementById("answers");
-  box.innerHTML = "";
-
-  q.a.forEach((text, index) => {
-
-    const btn = document.createElement("button");
-    btn.innerText = text;
-
-    btn.onclick = () => {
-      if(index === q.c){
-        points++;
-        alert("✔ Correto!");
-      } else {
-        alert("❌ Errado!");
-      }
-
-      i++;
-      show();
-    };
-
-    box.appendChild(btn);
-
-  });
-
-  document.getElementById("score").innerText =
-    "Pontos: " + points;
-
-}
